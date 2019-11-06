@@ -1,0 +1,60 @@
+diff -Naur ./graphs.php ./graphs.php
+--- ./graphs.php        2019-11-06 16:05:41.406581350 +0000
++++ ./graphs.php        2019-11-06 16:15:16.017793889 +0000
+@@ -256,7 +256,7 @@
+                        add_audit(AUDIT_ACTION_ADD, AUDIT_RESOURCE_GRAPH, 'Graph ['.getRequest('name').']');
+                }
+
+-               unset($_REQUEST['form']);
++               //unset($_REQUEST['form']);
+        }
+
+        $result = DBend($result);
+diff -Naur ./hosts.php ./hosts.php
+--- ./hosts.php 2019-11-06 16:04:52.727191071 +0000
++++ ./hosts.php 2019-11-06 15:47:14.392365003 +0000
+@@ -811,7 +811,7 @@
+                }
+                show_messages($result, $msgOk, $msgFail);
+
+-               unset($_REQUEST['form'], $_REQUEST['hostid']);
++               //unset($_REQUEST['form'], $_REQUEST['hostid']);
+        }
+        catch (Exception $e) {
+                DBend(false);
+diff -Naur ./items.php ./items.php
+--- ./items.php 2019-11-06 16:05:22.767666133 +0000
++++ ./items.php 2019-11-06 16:14:28.863480791 +0000
+@@ -948,7 +948,7 @@
+        }
+
+        if ($result) {
+-               unset($_REQUEST['itemid'], $_REQUEST['form']);
++               //unset($_REQUEST['itemid'], $_REQUEST['form']);
+                uncheckTableRows(getRequest('checkbox_hash'));
+        }
+ }
+diff -Naur ./templates.php ./templates.php
+--- ./templates.php     2019-11-06 16:05:00.174556755 +0000
++++ ./templates.php     2019-11-06 15:58:21.624986984 +0000
+@@ -545,7 +545,7 @@
+                        add_audit_ext($auditAction, AUDIT_RESOURCE_TEMPLATE, $templateId, $templateName, 'hosts', null, null);
+                }
+
+-               unset($_REQUEST['form'], $_REQUEST['templateid']);
++               //unset($_REQUEST['form'], $_REQUEST['templateid']);
+                $result = DBend($result);
+
+                if ($result) {
+diff -Naur ./triggers.php ./triggers.php
+--- ./triggers.php      2019-11-06 16:05:30.252033634 +0000
++++ ./triggers.php      2019-11-06 16:14:46.865364728 +0000
+@@ -395,7 +395,7 @@
+        }
+
+        if ($result) {
+-               unset($_REQUEST['form']);
++               //unset($_REQUEST['form']);
+                uncheckTableRows(getRequest('checkbox_hash'));
+        }
+ }
